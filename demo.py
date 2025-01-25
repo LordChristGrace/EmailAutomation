@@ -3,22 +3,17 @@ import email_functions
 import main_file
 
 
-# Fetching a list of decrypted emails from the desired folder
-emails=email_functions.fetch_emails_from_folder("Starred")
-# Export the emails to MySQL
-email_functions.export_to_mysql(emails, "starredEmails")
-
-
-# # Example query to read from MySQL
-query = "SELECT Sender, COUNT(Sender) FROM myEmails GROUP BY Sender"
-s1 = email_functions.read_sql_to_dataframe(query)
-print(s1)
-
-
 # Exporting email data to MySQL
 ls=email_functions.fetch_emails_from_folder("[Gmail]/Spam")
 df = pd.DataFrame(ls, columns=[ 'Subject','From','Date'])
 email_functions.export_to_mysql(ls, "spamEmails")
+
+
+# Example query to read from MySQL
+query = "SELECT Sender, COUNT(Sender) FROM spamEmails GROUP BY Sender"
+# storing the fetched information into DataFrame s1
+s1 = email_functions.read_sql_to_dataframe(query)
+print(s1)
 
 
 # Defining recipient emails and recipient names
