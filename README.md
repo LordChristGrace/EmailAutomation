@@ -24,4 +24,8 @@ This project provides a comprehensive solution for automating email-related task
   - Demonstrates the functionality of each method in `email_functions.py` with practical examples.
 
 ---
+# A Bit About Myself :)
+1. Student at IIT Bombay
+2. A coding enthusiast!
+3. Link to my LeetCode profile: https://leetcode.com/u/Kushagra_1025/
 
